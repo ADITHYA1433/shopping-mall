@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body{
+      background-color: rgb(255, 105, 105);
+  }
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+  }
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+  #myTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+  #myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  </style>
+  
+  
+  
+  
+<body>
+<h2>My Customers</h2>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+  <tr>
+    <td>New Apple iphone 12 mini 64GB Blue </td>
+    <td>Rs. 69,900</td>
+  </tr>
+  <tr>
+    <td>New Apple iphone 12 64GB Blue </td>
+    <td>Rs. 79,900</td>
+  </tr>
+  <tr>
+    <td>New Apple iphone 12 Pro Max 128GB Pacific Blue(2020) </td>
+    <td>Rs. 1,29,900</td>
+  </tr>
+  <tr>
+    <td>New Apple iphone 12 Pro 128GB Pacific Blue(2020)</td>
+    <td>Rs. 1,19,900</td>
+  </tr>
+  <tr>
+    <td>Veg Pizza</td>
+    <td>2 Pizza starting @99(small)</td>
+  </tr>
+  <tr>
+    <td>Veg Pizza</td>
+    <td>2 Pizza starting @199(big)</td>
+  </tr>
+  <tr>
+    <td>veggie crunch(Personal)</td>
+    <td>145</td>
+  </tr>
+  <tr>
+    <td>veggie crunch(large)</td>
+    <td>475</td>
+  </tr>
+  <tr>
+    <td>Double cheese(Personal)</td>
+    <td>145</td>
+  </tr>
+    <td>Double cheese(large)</td>
+    <td>475</td>
+  </tr>
+  <tr>
+    <td>Mutton Whopper Combo</td>
+    <td>318</td>
+  </tr> 
+  <tr>
+    <td>Veg Masala Whopper</td>
+    <td>199</td>
+  </tr>
+  <tr>
+    <td>Veg Masala Whopper Combo</td>
+    <td>298</td>
+  </tr>
+  <tr>
+    <td>Chicken Masala Whopper</td>
+    <td>209</td>
+  </tr>
+</table>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</body>
+</html>
+
